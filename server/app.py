@@ -23,12 +23,9 @@ def index():
 
     username = ''
     username = request.cookies.get('username')
-
-##    lat = request.headers['lat']
-##    lon = request.headers['lon']
-
     useragent = request.headers['User-Agent']
     response = make_response(flask.render_template('index.html'))
+
     if (username is None) or (username == '') or (username == 'None'):
         keys = cookie.keys()
         n = 0
@@ -44,7 +41,7 @@ def index():
 
     logline = json.dumps({'datetime': str(datetime.datetime.now()), 'Action': 'pageload', 'cookie': username, 'useragent': useragent})
 
-    f = open("C:\Users\Dell\Backup\Dropbox\Google Drive\Haroon\MIMS14\Info253\server\log.txt", 'a')
+    f = open("C:\Users\Dell\Backup\Dropbox\Google Drive\Haroon\MIMS14\Info253\webarch\server\log.txt", 'a')
     f.write(logline + "\n")
     f.close()
 
@@ -129,10 +126,6 @@ def create():
 
     j=0
     msg=""
-##    while j < len(list):
-##        list1[j] = db[list[j]]
-##        app.logger.debug((list1[j]))
-        ##del db[list[j]]
     while j < len(list):
         # Check if the url is already present in the db.
         if db[list[j]] == url:
@@ -177,18 +170,13 @@ def create():
     db[str(url)] = 0
     ##db.close()
     useragent = request.headers['User-Agent']
-##    lat = request.headers['lat']
-##    lon = request.headers['lon']
     lat = request.form.get("lat")
     lon = request.form.get("lon")
     logline = json.dumps({'datetime': str(datetime.datetime.now()), 'Action': 'saveURL', 'useragent': useragent, 'Latitude': lat, 'Longitude': lon})
-    f = open("C:\Users\Dell\Backup\Dropbox\Google Drive\Haroon\MIMS14\Info253\server\log.txt", 'a')
+    f = open("C:\Users\Dell\Backup\Dropbox\Google Drive\Haroon\MIMS14\Info253\webarch\server\log.txt", 'a')
     f.write(logline + "\n")
     f.close()
     return flask.render_template('shorturl.html', longURL=url, shortPath=shorturl, message=msg, counts='0')
-
-    ##return flask.redirect("/")
-
 
 @app.route("/<short>", methods=['GET'])
 def redirect_short(short):
@@ -222,8 +210,8 @@ def redirect_short(short):
             useragent = request.headers['User-Agent']
             lat = request.args.get("lat", "none")
             lon = request.args.get("lon", "none")
-            logline = json.dumps({'datetime': str(datetime.datetime.now()), 'Action': 'redirect', 'useragent': useragent, 'Latitude': lat, 'Longitude': lon})
-            f = open("C:\Users\Dell\Backup\Dropbox\Google Drive\Haroon\MIMS14\Info253\server\log.txt", 'a')
+            logline = json.dumps({'datetime': str(datetime.datetime.now()), 'useragent': useragent, 'URL': str(destination), 'Action': 'redirect', 'Latitude': lat, 'Longitude': lon})
+            f = open("C:\Users\Dell\Backup\Dropbox\Google Drive\Haroon\MIMS14\Info253\webarch\server\log.txt", 'a')
             f.write(logline + "\n")
             f.close()
             return flask.redirect(destination)

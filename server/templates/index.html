@@ -1,39 +1,96 @@
-<!DOCTYPE html>
-<html lang="en-us">
-	<head> 
-		<meta charset="utf-8">
-		<title>URL Shortner</title>
-		<link rel="stylesheet" href="../static/css/bootstrap.css">
-		<link rel="stylesheet" href="../static/css/style.css">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-		<script type="text/javascript" src="../static/js/url.js"></script>
-	</head>
-	<body onload="load()">
-		<h1 id="header">URL Shortner</h1>
-		<div id="container">
-			<div id="content">
-				<form id="urlShortner" name="urlShortner" method="post" action ="/create">
-					<label for="formurl">Enter a long URL:</label>
-					<input type="text" id="formurl" name="formurl" value=""/>
-					<span id="alert"></span>
-					<label class="checkbox inline" id="checkBox" for="check">
-						<input type="checkbox" id="check" value="check"> Check this box to enter a shortpath (Optional)
-					</label>
-					<div id="shortpath">
-						<label for="formshortpath">Enter the shortpath:</label>
-						<input type="text" id="formshortpath" name="formshortpath" value=""/>
-						<span id="alertShort"></span>
-						<input type="text" id="lat" name="lat" value=""/>
-						<input type="text" id="lon" name="lon" value=""/>
-					</div>
-					<input type="submit" id="submitButton" class="btn" value="GO" disabled="disabled" />
-				</form>
-				
-			</div>
-		</div>
-		<div id="footer">
-			<p id="linkp">Info 253 Project #1 <a id="link" href="http://people.ischool.berkeley.edu/~haroon/" target="_blank">Haroon Rasheed Paul Mohamed</a>
-			</p>
-		</div>
-	</body>
-</html>
+ <!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <title>Prabhavathi's Home Page</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />  <!-- to enable full screen -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an outdated browser. Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+
+  <div id="pagewrap">
+<!--div><nav class=bg_pattern>
+       <ul id="top_nav" >
+         <li><a href="#" title="Welcome">Home</a></li>
+         <li><a href="#" title="About">Prabha</a></li>
+         <li><a href="#" title="Blog">Haroon</a></li>
+         <li><a href="#" title="Contact">Contact</a></li>
+         <li><a href="#" title="Support">Help</a></li>
+        </ul>
+      </nav></div-->
+    <div id="header"
+      <img src="img/treesheader.jpeg"  alt="Everything is Possible" title="Everything is Possible"> 
+
+    </div>
+    
+
+  <div>
+    <div id="content">
+      <div id="sidebar1">
+        <div class="sidebarcontent">
+      <h3>Favourite Lines </h3>
+        <p><strong><em>I shall be telling this with a sigh<br/>
+            Somewhere ages and ages hence:<br/>
+            Two roads diverged in a wood, and I,<br/>
+            I took the one less traveled by,<br/>
+            And that has made all the difference.</em></strong></p>
+          </div>
+          </div>
+ 
+  <div id="sidebar2">
+        <div id="appdiv">
+
+          <div id="appheader">
+                <h2>Create a short URL</h1>
+         </div><!-- close header -->
+         <div class = 'myform'>
+          <br>
+
+            <form id="urlShortner" name="urlShortner" method="post" action ="/create">
+              <label for="formurl">Enter a long URL:</label>
+              <input type="text" id="formurl" name="formurl" value=""/>
+              <span id="alert"></span>
+              <br>
+              <label class="checkbox inline" id="checkBox" for="check">
+                <input type="checkbox" id="check" value="check"> Check this box to enter a shortpath (Optional)
+              </label>
+              <br>
+              <div id="shortpath">
+                <label for="formshortpath">Enter the shortpath:</label>
+                <input type="text" id="formshortpath" name="formshortpath" value=""/>
+                <span id="alertShort"></span>
+                <input type="text" id="lat" name="lat" value=""/>
+                <input type="text" id="lon" name="lon" value=""/>
+              </div>
+              <input type="submit" id="submitButton" class="btn" value="Submit" disabled="disabled" />
+            </form>
+        <br/><br/>
+      </div>
+    </div>
+</div>
+
+    <div id="sidebar3">
+      <div class="sidebarcontent">
+        Write something here
+       <br/><br/>
+    </div>
+  </div>
+</div>
+    <div id="footer">
+       &copy; Made by Prabhavathi Matta , Haroon Rasheed
+       <br> University of California, Berkeley
+    </div>
+  </div>
+  </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/main.js"></script>
+  </body>
+  </html>

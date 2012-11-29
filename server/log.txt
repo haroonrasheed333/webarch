@@ -37,3 +37,81 @@
 {"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:17.0) Gecko/17.0 Firefox/17.0", "Latitude": "37.8713856", "Longitude": "-122.2583986", "datetime": "2012-11-27 17:24:37.279000"}
 {"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:17.0) Gecko/17.0 Firefox/17.0", "cookie": "4349", "datetime": "2012-11-27 17:24:40.125000"}
 {"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:17.0) Gecko/17.0 Firefox/17.0", "Latitude": "", "Longitude": "", "datetime": "2012-11-27 17:24:45.860000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 14:29:00.405000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "7298", "datetime": "2012-11-28 14:32:50.557000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 14:37:52.176000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 14:38:12.701000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "7298", "datetime": "2012-11-28 14:38:28.428000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "7298", "datetime": "2012-11-28 14:38:28.657000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "7298", "datetime": "2012-11-28 14:38:29.088000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 14:38:33.006000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "6850", "datetime": "2012-11-28 14:38:53.758000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 14:38:58.870000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "6850", "datetime": "2012-11-28 14:40:12.488000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 14:40:17.345000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "9181", "datetime": "2012-11-28 14:41:06.783000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 14:41:12.690000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "9181", "datetime": "2012-11-28 14:41:33.737000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 14:41:42.052000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 14:44:50.341000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "9181", "datetime": "2012-11-28 14:45:29.876000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "9181", "datetime": "2012-11-28 14:48:09.507000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 14:48:11.903000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "9181", "datetime": "2012-11-28 14:48:22.725000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "8135", "datetime": "2012-11-28 14:48:43.726000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "8135", "datetime": "2012-11-28 14:49:16.672000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "1879", "datetime": "2012-11-28 14:49:38.964000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "1879", "datetime": "2012-11-28 14:50:32.147000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 14:51:14.242000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 14:52:42.330000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11", "cookie": "4887", "datetime": "2012-11-28 14:53:00.247000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 14:55:19.134000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 14:55:26.278000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 14:57:20.319000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 15:01:50.542000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 15:01:54.359000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 15:03:53.415000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 15:04:58.807000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 15:05:05.801000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 16:45:44.143000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 16:46:01.347000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 16:46:11.949000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 16:46:12.285000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 16:46:21.041000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 16:46:22.434000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 16:46:22.759000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 16:46:32.204000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 16:46:47.741000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 16:47:44.428000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 16:47:53.303000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 16:48:03.361000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 16:48:05.843000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 16:51:50.730000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 16:53:22.416000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 16:54:01.918000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "Latitude": "", "Longitude": "", "datetime": "2012-11-28 16:54:56.238000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "2043", "datetime": "2012-11-28 16:55:31.116000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "Latitude": "37.8713795", "Longitude": "-122.2584181", "datetime": "2012-11-28 16:55:39.230000"}
+{"Action": "pageload", "useragent": "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; AskTbFXTV5/5.13.1.18107; Zune 4.7; InfoPath.3; .NET CLR 3.5.30729; .NET CLR 3.0.30618; .NET4.0C; .NET4.0E)", "cookie": "3979", "datetime": "2012-11-29 01:55:07.121000"}
+{"Action": "pageload", "useragent": "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; AskTbFXTV5/5.13.1.18107; Zune 4.7; InfoPath.3; .NET CLR 3.5.30729; .NET CLR 3.0.30618; .NET4.0C; .NET4.0E)", "cookie": "3979", "datetime": "2012-11-29 01:56:52.998000"}
+{"Action": "pageload", "useragent": "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; AskTbFXTV5/5.13.1.18107; Zune 4.7; InfoPath.3; .NET CLR 3.5.30729; .NET CLR 3.0.30618; .NET4.0C; .NET4.0E)", "cookie": "3979", "datetime": "2012-11-29 01:56:54.275000"}
+{"Action": "saveURL", "useragent": "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; AskTbFXTV5/5.13.1.18107; Zune 4.7; InfoPath.3; .NET CLR 3.5.30729; .NET CLR 3.0.30618; .NET4.0C; .NET4.0E)", "Latitude": "", "Longitude": "", "datetime": "2012-11-29 01:57:42.060000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "1321", "datetime": "2012-11-29 02:17:17.589000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "1321", "datetime": "2012-11-29 02:18:37.189000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "1321", "datetime": "2012-11-29 02:23:08.641000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "1321", "datetime": "2012-11-29 02:23:37.741000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "1321", "datetime": "2012-11-29 02:25:36.664000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "Latitude": "", "Longitude": "", "datetime": "2012-11-29 02:26:01.236000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "1321", "datetime": "2012-11-29 02:29:53.963000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "1321", "datetime": "2012-11-29 02:31:22.114000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "1321", "datetime": "2012-11-29 02:45:05.461000"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "1321", "datetime": "2012-11-29 02:46:23.634000"}
+{"Action": "saveURL", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "Latitude": "37.8646746", "Longitude": "-122.2668329", "datetime": "2012-11-29 02:46:43.987000"}
+{"URL": "http://www.google.com", "Longitude": "none", "datetime": "2012-11-29 02:55:00.037000", "Action": "redirect", "Latitude": "none", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0"}
+{"URL": "http://www.google.com", "Longitude": "none", "datetime": "2012-11-29 02:55:06.904000", "Action": "redirect", "Latitude": "none", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0"}
+{"URL": "http://www.google.com", "Longitude": "none", "datetime": "2012-11-29 02:55:12.236000", "Action": "redirect", "Latitude": "none", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0"}
+{"URL": "http://www.yelp.com", "Longitude": "none", "datetime": "2012-11-29 02:55:38.793000", "Action": "redirect", "Latitude": "none", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0"}
+{"URL": "http://www.yelp.com", "Longitude": "none", "datetime": "2012-11-29 02:55:45.716000", "Action": "redirect", "Latitude": "none", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0"}
+{"Action": "pageload", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0", "cookie": "1321", "datetime": "2012-11-29 05:25:01.061000"}
+{"URL": "http://www.yelp.com", "Longitude": "none", "datetime": "2012-11-29 05:25:28.341000", "Action": "redirect", "Latitude": "none", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0"}
+{"URL": "http://www.yelp.com", "Longitude": "none", "datetime": "2012-11-29 05:25:36.470000", "Action": "redirect", "Latitude": "none", "useragent": "Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/18.0 Firefox/18.0"}

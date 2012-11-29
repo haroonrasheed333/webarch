@@ -1,3 +1,4 @@
+var nothing;
 $(document).ready(function() {
 
     $("input").attr("autocomplete", "off");
@@ -75,8 +76,22 @@ $(document).ready(function() {
         $("#submitButton").attr('disabled', 'disabled');
         $("#alert").html("");
 
-        getLocation()
-
+var gl;
+ 
+try {
+  if (typeof navigator.geolocation === 'undefined'){
+    gl = google.gears.factory.create('beta.geolocation');
+  } else {
+    gl = navigator.geolocation;
+  }
+} catch(e) {}
+ 
+if (gl) {
+  gl.getCurrentPosition(displayPosition, displayError);
+  alert("haroon");
+} else {
+  alert("Geolocation services are not supported by your web browser.");
+}
         return;
 	});
 
@@ -98,6 +113,17 @@ $(document).ready(function() {
 
 });
 
+function displayPosition(position) {
+  $("#lat").html(position.coords.latitude);
+  $("#lon").html(position.coords.longitude);
+  $("#lat").val(position.coords.latitude);
+  $("#lon").val(position.coords.longitude);
+}
+ 
+function displayError(positionError) {
+  alert("error");
+}
+
 function load()
 {
 document.urlShortner.reset();
@@ -105,7 +131,7 @@ $("#submitButton").attr('disabled', 'disabled');
 }
 
 
-function getLocation()
+/*function getLocation()
   {
   if (navigator.geolocation)
     {
@@ -126,4 +152,29 @@ function showPosition(position)
   $("#lon").val(position.coords.longitude);
 
   
+  }*/
+
+/*function showLocation(position) {
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+  alert("Latitude : " + latitude + " Longitude: " + longitude);
+  return "sdbdvb";
+}
+
+function errorHandler(err) {
+  if(err.code == 1) {
+    alert("Error: Access is denied!");
+  }else if( err.code == 2) {
+    alert("Error: Position is unavailable!");
   }
+}
+function getLocation(){
+
+   if(navigator.geolocation){
+      var options = {timeout:60000};
+      nothing = navigator.geolocation.getCurrentPosition(showLocation);
+      console.log(nothing);
+   }else{
+      alert("Sorry, browser does not support geolocation!");
+   }
+}*/

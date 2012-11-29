@@ -1,0 +1,251 @@
+body {
+  font-family: 'livory', serif;
+  /*font: 1em/150% Arial, Helvetica, sans-serif;*/
+}
+a {
+  color: #669;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+h1 {
+  font: bold 36px/100% Arial, Helvetica, sans-serif;
+}
+/************************************************************************************
+STRUCTURE
+*************************************************************************************/
+
+#pagewrap {
+  padding: 5px;
+  width: 960px;
+  margin: 20px auto;
+    background: #f0efef;
+        background:url('../img/bckgrnd.jpg') repeat;
+
+}
+#header {
+  height: 200px;
+  width: 100%;
+background: url('../img/bg.png')  center repeat;
+background-size: 100%;
+margin = 10px;
+}
+#content {
+  width: 100%;
+    margin: 10px;
+
+}
+#sidebar1{
+  width: 28%;
+  height: 500px;
+  float: left;
+  text-align: left;
+  
+}
+#sidebar2 {
+  width: 44%;
+  height: 500px;
+  float: left;
+  text-align: left;
+  border-radius: 7px;
+
+}
+#sidebar3 {
+  width: 28%;
+  height: 500px;
+  float: left;
+    background: 'white';
+
+  text-align: left;
+
+}
+
+.sidebarcontent{
+  margin:10px;
+  margin-top: 30px;
+    background-color: 'white';
+
+}
+
+#footer {
+  clear: both;
+  text-align: left;
+}
+
+#copy{
+  text-align :left;
+}
+
+
+#appheader {
+    background-color: #666;
+    color: #FFF;
+    height: 40px;
+    text-align: center;
+}
+  #appdiv {
+  
+    background-color:#e7ebf2;
+    width: 100%;
+    height: 400px;
+    margin-left: auto; 
+    margin-right: auto;
+    font-weight: ;
+    -moz-box-shadow: 5px 15px 15px 5px #222;
+   -webkit-box-shadow: 5px 15px 15px 5px #222;
+    box-shadow: 5px 15px 15px 5px #222; 
+    position:relative;
+    animation:myfirst 3s;
+-moz-animation:myfirst 3s; /* Firefox */
+-webkit-animation:myfirst 3s; /* Safari and Chrome */
+  }
+
+
+.myform{
+  padding: 5px;
+    /*margin-top: 40px;*/
+  
+
+}
+
+
+
+@keyframes myfirst {
+from {background:#000;}
+to {background:#e7ebf2;}
+}
+
+@-moz-keyframes myfirst /* Firefox */ {
+from {background:#000;}
+to {background:#e7ebf2;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */ {
+from {background:#000;}
+to {background:#e7ebf2;}
+}
+
+#shortpath{
+  display: none;
+}
+
+#lat{
+  display: none;
+}
+
+#lon{
+  display: none;
+}
+
+/* ------- Navigation ----------- */
+
+ul#top_nav  {
+  border: 1px solid #292929;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  margin-bottom: 50px;
+
+  -webkit-box-shadow: 0 3px 3px #3c3c40;
+     -moz-box-shadow: 0 3px 3px #3c3c40;
+          box-shadow: 0 3px 3px #3c3c40;
+  
+}
+
+ul#top_nav li {
+  list-style: none;
+  float: left;
+}
+
+ul#top_nav li a {
+  text-align: center;
+  height: 50px;
+  width: 140px;
+  line-height: 50px;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #000;
+ 
+  border-right: 1px solid #323235;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  
+  background-image: -moz-linear-gradient(top, #535357, #3c3c3f);
+  background-image: -ms-linear-gradient(top, #535357, #3c3c3f);
+  background-image: -webkit-linear-gradient(top, #535357, #3c3c3f);
+  background-image: linear-gradient(top, #535357, #3c3c3f);
+  
+  -webkit-box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.2), 0 1px 0px #292929;
+     -moz-box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.2), 0 1px 0px #292929;
+          box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.2), 0 1px 0px #292929;
+
+}
+
+ul#top_nav li a:hover {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  background-image: -moz-linear-gradient(top, #565658, #313132);
+  background-image: -ms-linear-gradient(top, #565658, #313132);
+  background-image: -webkit-linear-gradient(top, #565658, #313132);
+  background-image: linear-gradient(top, #565658, #313132);
+  
+  -webkit-box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.2), 0 1px 0px #292929;
+      -moz-box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.2), 0 1px 0px #292929;
+           box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.2), 0 1px 0px #292929;
+}
+
+ul#top_nav li a:active  {
+  background: #414142;
+  -webkit-box-shadow: inset 0 2px 3px rgba(0,0,0, 0.2);
+      -moz-box-shadow: inset 0 2px 3px rgba(0,0,0, 0.2);
+           box-shadow: inset 0 2px 3px rgba(0,0,0, 0.2);
+}
+
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+  #pagewrap {
+    width: 94%;
+  }
+  #content {
+    width: 100%;
+  }
+  #sidebar {
+    width: 30%;
+  }
+  .imagepic{
+    padding: 14px;
+  }
+}
+/* for 700px or less */
+@media screen and (max-width: 700px) {
+  #content {
+    width: auto;
+    float: none;
+  }
+  #sidebar {
+    width: auto;
+    float: none;
+  }
+}
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+  #header {
+    height: auto;
+    float:center;
+    width: 100px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+}
+#header, #content, #sidebar {
+  margin-bottom: 5px;
+}
+#pagewrap, #header{
+  border: solid 1px #ccc;
+}
+​
