@@ -21,13 +21,13 @@ STRUCTURE
   width: 960px;
   margin: 20px auto;
     background: #f0efef;
-        background:url('../static/img/bckgrnd.jpg') repeat;
+        background:url('../img/bckgrnd.jpg') repeat;
 
 }
 #header {
   height: 200px;
   width: 100%;
-background: url('../img/static/bg.png')  center repeat;
+background: url('../img/bg.png')  center repeat;
 background-size: 100%;
 margin = 10px;
 }

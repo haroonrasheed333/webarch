@@ -110,10 +110,8 @@ $(document).ready(function() {
         }
         
     });
-    $('#sidebarcontent').addEventListener("touchstart", onTouchStart, false);
-        $('#sidebarcontent').addEventListener("touchend", onTouchEnd, false);
 
-      function touchstart(event){
+      function onTouchStart(event){
         event.stopPropagation();
         event.preventDefault();
             $('#sidebar').css('color','blue');
@@ -133,10 +131,8 @@ $(document).ready(function() {
           $("sidebar1").css("font-family", "'Trebuchet MS', Arial, Helvetica, sans-serif");
         });
 
-        var ctr = document.getElementById('ctr');
-        ctr.addEventListener('touchstart', onTouchStart, false);
-        ctr.addEventListener('touchend', onTouchEnd, false);
-        }
+     $('.sidebarcontent').bind("touchstart", onTouchStart, false);
+        $('.sidebarcontent').bind("touchend", onTouchEnd, false);
 
 });
 
