@@ -194,6 +194,10 @@ ul#top_nav li a:active  {
            box-shadow: inset 0 2px 3px rgba(0,0,0, 0.2);
 }
 
+#urls li{
+  list-style: none;
+}
+
 
 /************************************************************************************
 MEDIA QUERIES

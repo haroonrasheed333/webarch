@@ -5,6 +5,7 @@ import random
 from subprocess import check_output
 import flask
 import json
+import csv
 import datetime
 from flask import request
 from flask import make_response
@@ -16,6 +17,11 @@ app.debug = True
 db = shelve.open("shorten.db")
 cookie = shelve.open("cookie.db")
 
+def csv_readline(line):
+    """Given a sting CSV line, return a list of strings."""
+    for row in csv.reader([line]):
+        return row
+
 @app.route('/')
 def index():
     """Builds a template based on a GET request, with some default
@@ -24,7 +30,22 @@ def index():
     username = ''
     username = request.cookies.get('username')
     useragent = request.headers['User-Agent']
-    response = make_response(flask.render_template('index.html'))
+    user = { 'name': 'Miguel', '2': 'Haroon' }
+
+    f = open('url_sort.out', 'r')
+    urlList = []
+    for line in f:
+        cell = csv_readline(line)
+        urlList.append(str(cell[0]))
+
+    urlDict = {}
+    i=0
+    while(i<len(urlList)):
+        key = 'url'+str(i)
+        urlDict[key] = urlList[i]
+        i=i+1
+
+    response = make_response(flask.render_template('index.html', urls=urlDict, numUrls=i))
 
     if (username is None) or (username == '') or (username == 'None'):
         keys = cookie.keys()
@@ -112,7 +133,7 @@ def redirect_wiki():
 # for that same word to the URL provided.  If there is no association between a
 # =short= word and a URL, then return a 404
 ##/
-@app.route("/create", methods=['PUT', 'POST'])
+@app.route("/create", methods=['GET', 'PUT', 'POST'])
 def create():
     """Create an association of =short= with the POST arguement =url="""
 

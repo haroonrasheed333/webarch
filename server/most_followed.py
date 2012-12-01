@@ -13,7 +13,7 @@ class URLsMostFollowed(MRJob):
                 yield url,1
 
     def reducer(self, url, count):
-        total = sum(counts)
+        total = sum(count)
         yield url, total
 
 if __name__ == '__main__':

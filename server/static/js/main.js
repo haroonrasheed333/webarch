@@ -101,6 +101,12 @@ $(document).ready(function() {
     return;
 	});
 
+  $('.sidebarcontent')[0].addEventListener("touchstart", onTouchStart, false);
+  $('.sidebarcontent')[0].addEventListener("touchend", onTouchEnd, false);
+
+  $('.sidebarcontent1')[0].addEventListener("touchstart", onTouchStart1, false);
+  $('.sidebarcontent1')[0].addEventListener("touchend", onTouchEnd1, false);
+
   $("#check").live('click', function() {
     var check = $('#check:checked').val();
     if (check=="check"){
@@ -117,13 +123,25 @@ $(document).ready(function() {
   function onTouchStart(event){
     event.stopPropagation();
     event.preventDefault();
-    $('#sidebar').css('color','blue');
+    $('#sidebar1').css('background-color','blue');
   }
   
   function onTouchEnd(event) {
     event.stopPropagation();
     event.preventDefault();
-    $('#sidebar').css('color','white');
+    $('#sidebar1').css('background-color','inherit');
+  }
+
+  function onTouchStart1(event){
+    event.stopPropagation();
+    event.preventDefault();
+    $('#sidebar2').css('background-color','red');
+  }
+  
+  function onTouchEnd1(event) {
+    event.stopPropagation();
+    event.preventDefault();
+    $('#sidebar2').css('background-color','inherit');
   }
 
   $('#check').on('click',function(e){
