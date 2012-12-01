@@ -16,55 +16,48 @@ h1 {
 STRUCTURE
 *************************************************************************************/
 
-#pagewrap {
-  padding: 5px;
+#container{
+  padding: 15px;
   width: 960px;
   margin: 20px auto;
-    background: #f0efef;
-        background:url('../img/bckgrnd.jpg') repeat;
+  background: #f0efef;
+  background:url('../img/bckgrnd.jpg') repeat;
+  height: 700px;
 
 }
 #header {
   height: 200px;
   width: 100%;
-background: url('../img/bg.png')  center repeat;
-background-size: 100%;
-margin = 10px;
+  background: url('../img/bg.png')  center repeat;
+  background-size: 100%;
 }
-#content {
-  width: 100%;
-    margin: 10px;
 
-}
 #sidebar1{
-  width: 28%;
-  height: 500px;
+  width: 25%;
   float: left;
   text-align: left;
   
 }
-#sidebar2 {
-  width: 44%;
-  height: 500px;
+
+#content {
+  width: 50%;
   float: left;
   text-align: left;
   border-radius: 7px;
 
 }
-#sidebar3 {
-  width: 28%;
-  height: 500px;
+
+#sidebar2 {
+  width: 25%;
   float: left;
-    background: 'white';
-
+  background: 'white';
   text-align: left;
-
 }
 
 .sidebarcontent{
   margin:10px;
   margin-top: 30px;
-    background-color: 'white';
+  background-color: 'white';
 
 }
 
@@ -207,45 +200,68 @@ MEDIA QUERIES
 *************************************************************************************/
 /* for 980px or less */
 @media screen and (max-width: 980px) {
-  #pagewrap {
+  
+  #container {
     width: 94%;
   }
-  #content {
-    width: 100%;
-  }
-  #sidebar {
+
+  #sidebar1 {
     width: 30%;
   }
-  .imagepic{
-    padding: 14px;
-  }
-}
-/* for 700px or less */
-@media screen and (max-width: 700px) {
+
   #content {
-    width: auto;
-    float: none;
+    width: 40%;
+    float: left;
   }
-  #sidebar {
-    width: auto;
-    float: none;
+  
+  #sidebar2 {
+    width: 20%;
+    float: left;
   }
 }
-/* for 480px or less */
-@media screen and (max-width: 480px) {
+
+/* for 800px or less */
+@media screen and (max-width: 800px) {
+
+  #sidebar1 {
+    display: none;
+  }
+  
+  #content {
+    width: 60%;
+    float: left;
+  }
+  
+  #sidebar2 {
+    width: 40%;
+    float: right;
+  }
+
+}
+
+/* for 500px or less */
+@media screen and (max-width: 500px) {
+
   #header {
-    height: auto;
-    float:center;
-    width: 100px;
+    display: none;  
   }
-  h1 {
-    font-size: 24px;
+
+  #content {
+    width: 80%;
+    margin-left: 30px;
+    float: left;
   }
+
+  #sidebar2 {
+    display: none;
+  }
+
 }
+
 #header, #content, #sidebar {
   margin-bottom: 5px;
 }
-#pagewrap, #header{
+#container, #header{
   border: solid 1px #ccc;
 }
 ​
