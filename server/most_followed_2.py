@@ -15,6 +15,8 @@ def main():
 
     urlList = []
     csv_writer = csv.writer(stdout)
+    fdata = open('url_sort.out', 'w')
+    csv_writer1 = csv.writer(fdata)
     urlListSort = []
 
     """URLsMostFollowed is defined in most_followed.py. It takes a json data file and outputs URLs (key) and number of hits (value)"""
@@ -34,6 +36,7 @@ def main():
     """Take the top ten items from the sorted list and write it in csv format"""
     while (i < len(urlListSort)):
         csv_writer.writerow(urlListSort[i])
+        csv_writer1.writerow(urlListSort[i])
         i=i+1
 
 if __name__ == '__main__':
