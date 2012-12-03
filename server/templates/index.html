@@ -38,7 +38,6 @@
           <h2>Create a short URL</h1>
         </div><!-- close header -->
         <div class = 'myform'>
-          <br>
           <form id="urlShortner" name="urlShortner" method="POST" action ="/create">
             <label for="formurl">Enter a long URL:</label>
             <input type="text" id="formurl" name="formurl" value=""/>
@@ -47,7 +46,6 @@
             <label class="checkbox inline" id="checkBox" for="check">
               <input type="checkbox" id="check" value="check"> Check this box to enter a shortpath (Optional)
             </label>
-            <br>
             <div id="shortpath">
               <label for="formshortpath">Enter the shortpath:</label>
               <input type="text" id="formshortpath" name="formshortpath" value=""/>
@@ -55,7 +53,8 @@
               <input type="text" id="lat" name="lat" value=""/>
               <input type="text" id="lon" name="lon" value=""/>
             </div>
-            <input type="submit" id="submitButton" class="btn" value="Submit" />
+            <br>
+            <input type="submit" id="submitButton" class="btn" value="Submit" disabled="disabled"/>
           </form>
           <br/><br/>
         </div>
@@ -64,11 +63,13 @@
 
     <div id="sidebar2">
       <div class="sidebarcontent1">
-        <h3>Most followed URLs</h3>
-        <ul id="urls"></ul>
+        <ul id="urls">
+          <li><h3>Most followed URLs</h3></li>
+        </ul>
        <br/><br/>
     </div>
   </div>
+</div>
   <div id="footer">
        &copy; Prabhavathi Matta , Haroon Rasheed
        <br> University of California, Berkeley

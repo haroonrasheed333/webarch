@@ -22,7 +22,7 @@ STRUCTURE
   margin: 20px auto;
   background: #f0efef;
   background:url('../img/bckgrnd.jpg') repeat;
-  height: 700px;
+  height: 600px;
 
 }
 #header {
@@ -35,20 +35,21 @@ STRUCTURE
 #sidebar1{
   width: 25%;
   float: left;
-  text-align: left;
+  text-align: justify;
   
 }
 
 #content {
-  width: 50%;
+  width: 48%;
   float: left;
   text-align: left;
   border-radius: 7px;
+  margin-left: 5px;
 
 }
 
 #sidebar2 {
-  width: 25%;
+  width: 23%;
   float: left;
   background: 'white';
   text-align: left;
@@ -64,6 +65,7 @@ STRUCTURE
 #footer {
   clear: both;
   text-align: left;
+  height: 50px; 
 }
 
 #copy{
@@ -74,7 +76,7 @@ STRUCTURE
 #appheader {
     background-color: #666;
     color: #FFF;
-    height: 40px;
+    height: 35px;
     text-align: center;
 }
   #appdiv {
@@ -85,9 +87,9 @@ STRUCTURE
     margin-left: auto; 
     margin-right: auto;
     font-weight: ;
-    -moz-box-shadow: 5px 15px 15px 5px #222;
-   -webkit-box-shadow: 5px 15px 15px 5px #222;
-    box-shadow: 5px 15px 15px 5px #222; 
+    -moz-box-shadow: 5px 10px 10px 5px #222;
+   -webkit-box-shadow: 5px 10px 10px 5px #222;
+    box-shadow: 5px 10px 10px 5px #222; 
     position:relative;
     animation:myfirst 3s;
 -moz-animation:myfirst 3s; /* Firefox */
@@ -102,7 +104,14 @@ STRUCTURE
 
 }
 
+#urlShortner{
+  margin-left: 50px;
+  margin-top: 30px;
+}
 
+#alertShort{
+  display: block;
+}
 
 @keyframes myfirst {
 from {background:#000;}
@@ -129,6 +138,11 @@ to {background:#e7ebf2;}
 
 #lon{
   display: none;
+}
+
+label, input[type=text]{
+  display: block;
+  margin-bottom: 5px;
 }
 
 /* ------- Navigation ----------- */
@@ -232,19 +246,20 @@ MEDIA QUERIES
   }
   
   #content {
-    width: 60%;
+    width: 55%;
     float: left;
+    margin-left: 30px
   }
   
   #sidebar2 {
-    width: 40%;
-    float: right;
+    width: auto;
+    float: left;
   }
 
 }
 
-/* for 500px or less */
-@media screen and (max-width: 500px) {
+/* for 600px or less */
+@media screen and (max-width: 600px) {
 
   #header {
     display: none;  
