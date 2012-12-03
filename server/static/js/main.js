@@ -79,27 +79,28 @@ $(document).ready(function() {
     $("#submitButton").attr('disabled', 'disabled');
     $("#alert").html("");
 
-    var gl;
- 
-    try {
-      if (typeof navigator.geolocation === 'undefined'){
-        gl = google.gears.factory.create('beta.geolocation');
-      } 
-      else {
-        gl = navigator.geolocation;
-      }
-    } 
-    catch(e) {}
-         
-    if (gl) {
-      gl.getCurrentPosition(displayPosition, displayError);
-      alert("haroon");
-    } 
-    else {
-      alert("Geolocation services are not supported by your web browser.");
+    if (navigator.geolocation) {
+      var location_timeout = setTimeout("geolocFail()", 10000);
+
+      navigator.geolocation.getCurrentPosition(function(position) {
+        clearTimeout(location_timeout);
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        $("#lat").html(lat);
+        $("#lon").html(lng);
+        $("#lat").val(lat);
+        $("#lon").val(lng);
+      }, function(error) {
+        clearTimeout(location_timeout);
+        alert("error");
+      });
+      alert("Would you like to share your Geolocation?");
+    }
+    function geolocFail(){
+      console.log("fail");
     }
     return;
-	});
+  });
 
   $('.sidebarcontent')[0].addEventListener("touchstart", onTouchStart, false);
   $('.sidebarcontent')[0].addEventListener("touchend", onTouchEnd, false);
@@ -156,15 +157,4 @@ function load()
 {
   document.urlShortner.reset();
   $("#submitButton").attr('disabled', 'disabled');
-}
-
-function displayPosition(position) {
-  $("#lat").html(position.coords.latitude);
-  $("#lon").html(position.coords.longitude);
-  $("#lat").val(position.coords.latitude);
-  $("#lon").val(position.coords.longitude);
-}
- 
-function displayError(positionError) {
-  alert("error");
 }

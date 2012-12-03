@@ -15,7 +15,6 @@ app = flask.Flask(__name__)
 app.debug = True
 
 db = shelve.open("shorten.db")
-cookie = shelve.open("cookie.db")
 
 def csv_readline(line):
     """Given a sting CSV line, return a list of strings."""
@@ -30,7 +29,6 @@ def index():
     username = ''
     username = request.cookies.get('username')
     useragent = request.headers['User-Agent']
-    user = { 'name': 'Miguel', '2': 'Haroon' }
 
     f = open('url_sort.out', 'r')
     urlList = []
@@ -48,83 +46,17 @@ def index():
     response = make_response(flask.render_template('index.html', urls=urlDict, numUrls=i))
 
     if (username is None) or (username == '') or (username == 'None'):
-        keys = cookie.keys()
-        n = 0
-        while (n==0):
-            username = str(random.randint(1000, 9999))
-            if username in keys:
-                n = 0
-            else:
-                n = 1
-        app.logger.debug("Random number " + username)
+        username = str(random.randint(1000, 9999))
+        app.logger.debug("Cookie: " + username)
         response.set_cookie('username', username)
-        cookie[username] = '1'
 
     logline = json.dumps({'datetime': str(datetime.datetime.now()), 'Action': 'pageload', 'cookie': username, 'useragent': useragent})
 
-    f = open("C:\Users\Dell\Backup\Dropbox\Google Drive\Haroon\MIMS14\Info253\webarch\server\log.txt", 'a')
+    f = open("log.txt", 'a')
     f.write(logline + "\n")
     f.close()
 
-    #return flask.render_template('index.html')
     return response
-
-
-###
-# This function is not working properly because the Content-Type is not set.
-# Set the correct MIME type to be able to view the image in your browser
-##/
-@app.route('/image')
-def image():
-    """Returns a PNG image of madlibs text"""
-    relationship = request.args.get("relationship", "friend")
-    name = request.args.get("name", "Jim")
-    adjective = request.args.get("adjective", "fun")
-
-##    resp = flask.make_response(
-##            check_output(['convert', '-size', '600x400', 'xc:transparent',
-##                '-font', '/usr/share/fonts/thai-scalable/Waree-BoldOblique.ttf',
-##                '-fill', 'black', '-pointsize', '32', '-draw',
-##                "text 10,30 'My %s %s said i253 was %s'" % (relationship, name, adjective),
-##                'png:-']), 200);
-##    # Comment in to set header below
-##    resp.headers['Content-Type'] = 'image/png'
-
-    str1 = request.headers['Accept']
-
-    if str1.find("image") > -1:
-        resp = flask.make_response(
-        check_output(['convert', '-size', '600x400', 'xc:transparent',
-                '-font', '/usr/share/fonts/thai-scalable/Waree-BoldOblique.ttf',
-                '-fill', 'black', '-pointsize', '32', '-draw',
-                "text 10,30 'My %s %s said i253 was %s'" % (relationship, name, adjective),
-                'png:-']), 200);
-            # Comment in to set header below
-        resp.headers['Content-Type'] = 'image/png'
-    elif str1.find("text") > -1:
-    ##elif request.headers['Accept'] == 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8':
-        resp = "My " + relationship + " " + name + " said i253 was " + adjective
-
-    return resp
-
-
-###
-# Below is an example of a shortened URL
-# We can set where /wiki redirects to with a PUT or POST command
-# and when we GET /wiki it will redirect to the specified Location
-##/
-@app.route("/wiki", methods=['PUT', 'POST'])
-def install_wiki_redirect():
-    wikipedia = request.form.get('url', "http://en.wikipedia.org")
-    db['wiki'] = wikipedia
-    return "Stored wiki => " + wikipedia
-
-@app.route("/wiki", methods=["GET"])
-def redirect_wiki():
-    destination = db.get('wiki', '/')
-    app.logger.debug("Redirecting to " + destination)
-    return flask.redirect(destination)
-
 
 ###
 # Now we'd like to do this generally:
@@ -190,20 +122,29 @@ def create():
     #This number will be the number of clicks. Each time a shortened url is clicked this value will be incremented.
     db[str(url)] = 0
     ##db.close()
+
+    response = make_response(flask.render_template('shorturl.html', longURL=url, shortPath=shorturl, message=msg, counts='0'))
+
+    username = request.cookies.get('username')
+    if (username is None) or (username == '') or (username == 'None'):
+        username = str(random.randint(1000, 9999))
+        app.logger.debug("Cookie: " + username)
+        response.set_cookie('username', username)
+
     useragent = request.headers['User-Agent']
     lat = request.form.get("lat")
     lon = request.form.get("lon")
-    logline = json.dumps({'datetime': str(datetime.datetime.now()), 'Action': 'saveURL', 'useragent': useragent, 'Latitude': lat, 'Longitude': lon})
-    f = open("C:\Users\Dell\Backup\Dropbox\Google Drive\Haroon\MIMS14\Info253\webarch\server\log.txt", 'a')
+
+    logline = json.dumps({'datetime': str(datetime.datetime.now()), 'Action': 'saveURL', 'cookie': username, 'useragent': useragent, 'Latitude': lat, 'Longitude': lon})
+    f = open("log.txt", 'a')
     f.write(logline + "\n")
     f.close()
-    return flask.render_template('shorturl.html', longURL=url, shortPath=shorturl, message=msg, counts='0')
+    return response
 
 @app.route("/<short>", methods=['GET'])
 def redirect_short(short):
     """Redirect the request to the URL associated =short=, otherwise return 404
     NOT FOUND"""
-    ##db = shelve.open("shorten.db")
 
     # Get the list of keys stored in the shelve db
     list = db.keys()
@@ -227,25 +168,23 @@ def redirect_short(short):
             if destination in list:
                 count=db[str(destination)]
             db[str(destination)]=count+1
-            ##db.close()
+
+            username = request.cookies.get('username')
+            if (username is None) or (username == 'None'):
+                username = ''
+
             useragent = request.headers['User-Agent']
             lat = request.args.get("lat", "none")
             lon = request.args.get("lon", "none")
-            logline = json.dumps({'datetime': str(datetime.datetime.now()), 'useragent': useragent, 'URL': str(destination), 'Action': 'redirect', 'Latitude': lat, 'Longitude': lon})
-            f = open("C:\Users\Dell\Backup\Dropbox\Google Drive\Haroon\MIMS14\Info253\webarch\server\log.txt", 'a')
+            logline = json.dumps({'datetime': str(datetime.datetime.now()), 'Action': 'redirect', 'cookie': username, 'useragent': useragent, 'Latitude': lat, 'Longitude': lon, 'URL': str(destination)})
+            f = open("log.txt", 'a')
             f.write(logline + "\n")
             f.close()
             return flask.redirect(destination)
-            #return flask.redirect("/")
+
     # If shortpath is not present in db, abort with 404
     else:
         flask.abort(404)
-
-@app.route("/<short>", methods=['DELETE'])
-def destroy(short):
-    """Remove the association between =short= and it's URL"""
-    raise NotImplementedError
-
 
 if __name__ == "__main__":
     app.run(port=int(environ['FLASK_PORT']))
