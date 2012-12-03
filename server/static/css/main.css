@@ -26,7 +26,7 @@ STRUCTURE
 
 }
 #header {
-  height: 200px;
+  height: 100px;
   width: 100%;
   background: url('../img/bg.png')  center repeat;
   background-size: 100%;
