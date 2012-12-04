@@ -9,8 +9,14 @@ import csv
 import datetime
 from flask import request
 from flask import make_response
+from flask import jsonify
 from os import environ
+from most_followed_2 import mostFollowed
+from browser_action import BrowserAgentAction
+from trending_url import TrendingURL
+import operator
 
+test ={};
 app = flask.Flask(__name__)
 app.debug = True
 
@@ -30,20 +36,8 @@ def index():
     username = request.cookies.get('username')
     useragent = request.headers['User-Agent']
 
-    f = open('url_sort.out', 'r')
-    urlList = []
-    for line in f:
-        cell = csv_readline(line)
-        urlList.append(str(cell[0]))
 
-    urlDict = {}
-    i=0
-    while(i<len(urlList)):
-        key = 'url'+str(i)
-        urlDict[key] = urlList[i]
-        i=i+1
-
-    response = make_response(flask.render_template('index.html', urls=urlDict, numUrls=i))
+    response = make_response(flask.render_template('index.html'))
 
     if (username is None) or (username == '') or (username == 'None'):
         username = str(random.randint(1000, 9999))
@@ -181,10 +175,84 @@ def redirect_short(short):
             f.write(logline + "\n")
             f.close()
             return flask.redirect(destination)
-
     # If shortpath is not present in db, abort with 404
     else:
         flask.abort(404)
+
+@app.route("/urllog", methods=['GET','POST'])
+def comments():
+    try:
+        mostfoll_bool = mostFollowed()
+        app.logger.debug(mostfoll_bool)
+        dictobj ={};
+
+        BrowserAgentAction
+
+        f = open('url_sort.out', 'r')
+        urlList = []
+        browserList =[];
+        for line in f:
+            cell = csv_readline(line)
+            urlList.append((str(cell[0]),str(cell[1])))
+        dictobj['most']=urlList
+
+        browaction = BrowserAgentAction(['log.txt'])
+        with browaction.make_runner() as runner:
+            runner.run()
+            for line in runner.stream_output():
+                key_value = browaction.parse_output_line(line)
+                browserList.append(key_value)
+        dictobj['browser']=browserList
+
+        urlToday = []
+        urlYest = []
+        percChange = []
+        urlTrendList = []
+        today = str(datetime.datetime.now().date())
+        yesterday = str((datetime.datetime.now() - datetime.timedelta(1)).date())
+        trending = TrendingURL(['log.txt'])
+        with trending.make_runner() as runner:
+            runner.run()
+            for line in runner.stream_output():
+                key_value = trending.parse_output_line(line)
+                logdate = key_value[0][0].split()[0]
+
+                if (logdate == today):
+                    urlToday.append(key_value)
+                elif (logdate == yesterday):
+                    urlYest.append(key_value)
+
+        app.logger.debug(urlToday)
+        app.logger.debug(urlYest)
+
+        i = 0
+        while(i<len(urlToday)):
+            j = 0
+            while(j<len(urlYest)):
+                if (urlToday[i][0][1] == urlYest[j][0][1]):
+                    pChange = ((urlToday[i][1] - urlYest[j][1]) * 100) / (urlYest[j][1])
+                    percChange.append([urlToday[i][0][1], pChange])
+                j = j + 1
+            i = i + 1
+
+        percChangeSort = sorted(percChange, key=operator.itemgetter(1), reverse=True)
+
+        dictobj['trend']=percChangeSort
+
+
+        app.logger.debug(dictobj)
+        app.logger.debug("Entered GET1")
+        # app.logger.debug(request.args)
+        # return flask.jsonify({'query':request.args.get('query')})
+        # jsonobj = flask.jsonify({'most':['www.yehp.com','www.yahoo.com']})
+        jsonobj = flask.jsonify(dictobj)
+        return jsonobj
+
+    except:
+        import traceback
+        traceback.print_exc()
+        raise Exception('something is wrong')
+
 
 if __name__ == "__main__":
     app.run(port=int(environ['FLASK_PORT']))

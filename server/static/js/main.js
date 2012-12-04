@@ -102,15 +102,6 @@ $(document).ready(function() {
     return;
   });
 
-  $('.sidebarcontent')[0].addEventListener("touchstart", onTouchStart, false);
-  $('.sidebarcontent')[0].addEventListener("touchend", onTouchEnd, false);
-
-  //$('.sidebarcontent1')[0].addEventListener("touchstart", onTouchStart1, false);
-  //$('.sidebarcontent1')[0].addEventListener("touchend", onTouchEnd1, false);
-
-  //$('.sidebarcontent')[0].addEventListener("touchmove", draggable, false);
-  //$('.sidebarcontent1')[0].addEventListener("touchmove", draggable, false);
-
   $("#check").live('click', function() {
     var check = $('#check:checked').val();
     if (check=="check"){
@@ -124,10 +115,19 @@ $(document).ready(function() {
     }
   });
 
+  $('.sidebarcontent').bind('touchstart', onTouchStart);
+  $('.sidebarcontent').bind('touchend', onTouchEnd);
+
+  $('.sidebarcontent1').bind('touchstart', onTouchStart1);
+  $('.sidebarcontent1').bind('touchend', onTouchEnd1);
+
+  var offset;
+  $('.sidebarcontent').bind('touchmove', onTouchMove);
+
   function onTouchStart(event){
     event.stopPropagation();
     event.preventDefault();
-    $('#sidebar1').css('background-color','blue');
+    $('#sidebar1').css('background-color',"blue");
   }
   
   function onTouchEnd(event) {
@@ -151,40 +151,90 @@ $(document).ready(function() {
   $('#check').on('click',function(e){
     $("sidebar1").css("font-family", "'Trebuchet MS', Arial, Helvetica, sans-serif");
   });
+  
+  function onTouchMove(event) {
+    event.preventDefault();
+    var touchmove = event.originalEvent.changedTouches[0];
+    if (!offset)
+    {
+      pos = $(this).position();
+      offset = {
+        left: touchmove.pageX - pos.left,
+        top: touchmove.pageY - pos.top
+      };
+    }
+    var x = touchmove.pageX - offset.left;
+    var y = touchmove.pageY - offset.top;
+    $(this).css({
+      top: y,
+      left: x
+    });
+  }
 
-  $('.sidebarcontent').bind("touchstart", onTouchStart, false);
-  $('.sidebarcontent').bind("touchend", onTouchEnd, false);
+  // Function to get details of URLS
+  function getComments(){
+    var commentURL = document.URL+'urllog';  
+    console.log(document.URL);  
+    console.log(commentURL)   
+    $.getJSON(commentURL, function(json){
+      var urls = json;
+      console.log(json);
+      mosturls = urls["most"];
+      console.log(mosturls.length)
+      if(mosturls.length == 0)
+      {
+          console.log("No data");
+          return;
+      }
+      else 
+      {  
+        for(var i = 0; i < mosturls.length; i++) 
+        {
+          $('#mostfoll').append('<li class="term">'+ mosturls[i][0] +' ('+mosturls[i][1]+')</li>');
 
-  $.fn.draggable = function() {
-        var offset = null;
-        var start = function(e) {
-          console.log("start");
-          var orig = e.originalEvent;
-          var pos = $(this).position();
-          offset = {
-            x: orig.changedTouches[0].pageX - pos.left,
-            y: orig.changedTouches[0].pageY - pos.top
-          };
-        };
-        var moveMe = function(e) {
-          console.log("move")
-          e.preventDefault();
-          var orig = e.originalEvent;
-          $(this).css({
-            top: orig.changedTouches[0].pageY - offset.y,
-            left: orig.changedTouches[0].pageX - offset.x
-          });
-        };
-        this.bind("touchstart", start);
-        this.bind("touchmove", moveMe);
+        }  
       };
 
-      $(".sidebarcontent").draggable();
+      browserActions = urls["browser"];
+      console.log(browserActions.length)
+      if(browserActions.length == 0)
+      {
+        console.log("No data");
+        return;
+      }
+      else 
+      {  
+        for(var i = 0; i < browserActions.length; i++) 
+        {
+          $('#browsercount').append('<li class="term">'+ browserActions[i][0] +' ('+browserActions[i][1]+')</li>');
 
+        }  
+      };
+
+      trendingURLs = urls["trend"];
+      console.log(trendingURLs.length)
+      if(trendingURLs.length == 0)
+      {
+        console.log("No data");
+        return;
+      }
+      else 
+      {  
+        for(var i = 0; i < trendingURLs.length; i++) 
+        {
+          $('#trendingurls').append('<li class="term">'+ trendingURLs[i][0] +' ('+trendingURLs[i][1]+')</li>');
+
+        }  
+      };
+    });
+  }
+  getComments();
 });
 
 function load()
 {
   document.urlShortner.reset();
   $("#submitButton").attr('disabled', 'disabled');
+  getComments();
 }
+

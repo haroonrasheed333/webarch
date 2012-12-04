@@ -22,13 +22,9 @@ STRUCTURE
   margin: 20px auto;
   background: #f0efef;
   background:url('../img/bckgrnd.jpg') repeat;
-  height: 600px;
+  height: 800px;
 
 }
-
-#container1{
-}
-
 #header {
   height: 100px;
   width: 100%;
@@ -61,6 +57,7 @@ STRUCTURE
 
 .sidebarcontent{
   position: absolute;
+
 }
 
 #footer {
@@ -112,6 +109,15 @@ STRUCTURE
 
 #alertShort{
   display: block;
+}
+
+ul{
+  list-style: none;
+  padding-left: 0px;
+}
+
+li{
+  padding-left: 0px;
 }
 
 @keyframes myfirst {
