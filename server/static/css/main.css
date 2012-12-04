@@ -25,6 +25,10 @@ STRUCTURE
   height: 600px;
 
 }
+
+#container1{
+}
+
 #header {
   height: 100px;
   width: 100%;
@@ -33,7 +37,7 @@ STRUCTURE
 }
 
 #sidebar1{
-  width: 25%;
+  width: 20%;
   float: left;
   text-align: justify;
   
@@ -41,25 +45,22 @@ STRUCTURE
 
 #content {
   width: 48%;
-  float: left;
+  float: right;
   text-align: left;
   border-radius: 7px;
-  margin-left: 5px;
+  margin-right: 15px;
 
 }
 
 #sidebar2 {
   width: 23%;
-  float: left;
+  float: right;
   background: 'white';
   text-align: left;
 }
 
 .sidebarcontent{
-  margin:10px;
-  margin-top: 30px;
-  background-color: 'white';
-
+  position: absolute;
 }
 
 #footer {
@@ -221,6 +222,7 @@ MEDIA QUERIES
   
   #container {
     width: 94%;
+    float: right;
   }
 
   #sidebar1 {
@@ -229,12 +231,12 @@ MEDIA QUERIES
 
   #content {
     width: 40%;
-    float: left;
+    float: right;
   }
   
   #sidebar2 {
     width: 20%;
-    float: left;
+    float: right;
   }
 }
 
@@ -247,19 +249,19 @@ MEDIA QUERIES
   
   #content {
     width: 55%;
-    float: left;
+    float: right;
     margin-left: 30px
   }
   
   #sidebar2 {
     width: auto;
-    float: left;
+    float: right;
   }
 
 }
 
-/* for 600px or less */
-@media screen and (max-width: 600px) {
+/* for 650px or less */
+@media screen and (max-width: 650px) {
 
   #header {
     display: none;  
@@ -268,7 +270,7 @@ MEDIA QUERIES
   #content {
     width: 80%;
     margin-left: 30px;
-    float: left;
+    float: right;
   }
 
   #sidebar2 {

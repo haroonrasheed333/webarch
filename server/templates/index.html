@@ -8,6 +8,7 @@
     <title>Prabhavathi's Home Page</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />  <!-- to enable full screen -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
   </head>
 
@@ -22,51 +23,51 @@
       <img src="img/treesheader.jpeg"  alt="Everything is Possible" title="Everything is Possible"> 
     </div>
     
-    <div id="sidebar1">
-      <div class="sidebarcontent">
-        <h3>About the Project </h3>
-        <p><strong><em> This project is our mobile version of bitly. The user enters Long URL fo which short URL is generated, if the user does not specify.<br/>
-          The app also shows the Trending URLs and Counts/Action per Browser
-              </em></strong>
-        </p>
+    <div id="container1">
+      <div id="sidebar1" class="sidebarcontent">
+          <h3>About the Project </h3>
+          <p><strong><em> This project is our mobile version of bitly. The user enters Long URL for which short URL is generated, if the user does not specify.<br/>
+            The app also shows the Trending URLs and Counts/Action per Browser
+                </em></strong>
+          </p>
       </div>
-    </div>
- 
-    <div id="content">
-      <div id="appdiv">
-        <div id="appheader">
-          <h2>Create a short URL</h1>
-        </div><!-- close header -->
-        <div class = 'myform'>
-          <form id="urlShortner" name="urlShortner" method="POST" action ="/create">
-            <label for="formurl">Enter a long URL:</label>
-            <input type="text" id="formurl" name="formurl" value=""/>
-            <span id="alert"></span>
-            <br>
-            <label class="checkbox inline" id="checkBox" for="check">
-              <input type="checkbox" id="check" value="check"> Check this box to enter a shortpath (Optional)
-            </label>
-            <div id="shortpath">
-              <label for="formshortpath">Enter the shortpath:</label>
-              <input type="text" id="formshortpath" name="formshortpath" value=""/>
-              <span id="alertShort"></span>
-              <input type="text" id="lat" name="lat" value=""/>
-              <input type="text" id="lon" name="lon" value=""/>
-            </div>
-            <br>
-            <input type="submit" id="submitButton" class="btn" value="Submit" disabled="disabled"/>
-          </form>
+
+      <div id="sidebar2">
+        <div class="sidebarcontent1">
+          <ul id="urls">
+            <li><h3>Most followed URLs</h3></li>
+          </ul>
           <br/><br/>
         </div>
       </div>
-    </div>
-
-    <div id="sidebar2">
-      <div class="sidebarcontent1">
-        <ul id="urls">
-          <li><h3>Most followed URLs</h3></li>
-        </ul>
-       <br/><br/>
+   
+      <div id="content">
+        <div id="appdiv">
+          <div id="appheader">
+            <h2>Create a short URL</h1>
+          </div><!-- close header -->
+          <div class = 'myform'>
+            <form id="urlShortner" name="urlShortner" method="POST" action ="/create">
+              <label for="formurl">Enter a long URL:</label>
+              <input type="text" id="formurl" name="formurl" value=""/>
+              <span id="alert"></span>
+              <br>
+              <label class="checkbox inline" id="checkBox" for="check">
+                <input type="checkbox" id="check" value="check"> Check this box to enter a shortpath (Optional)
+              </label>
+              <div id="shortpath">
+                <label for="formshortpath">Enter the shortpath:</label>
+                <input type="text" id="formshortpath" name="formshortpath" value=""/>
+                <span id="alertShort"></span>
+                <input type="text" id="lat" name="lat" value=""/>
+                <input type="text" id="lon" name="lon" value=""/>
+              </div>
+              <br>
+              <input type="submit" id="submitButton" class="btn" value="Submit" disabled="disabled"/>
+            </form>
+            <br/><br/>
+          </div>
+        </div>
     </div>
   </div>
 </div>
