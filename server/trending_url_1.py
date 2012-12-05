@@ -3,20 +3,29 @@ import sys
 import operator
 import csv
 from sys import stdout
-from trending_url import TrendingURLs
+from trending_url import TrendingURL
 import datetime
 
-def main():
+def getTrendingURL():
 
     urlToday = []
     csv_writer = csv.writer(stdout)
     urlYest = []
     percChange = []
 
+    fdata = open('url_sort.out', 'w')
+    csv_writer1 = csv.writer(fdata)
+    urlListSort = []
+    if (len(sys.argv) <2 ):
+        trendurl = TrendingURL(['log.txt'])
+    else:
+        trendurl = TrendingURL([sys.argv[1]])
+
+
     today = str(datetime.datetime.now().date())
     yesterday = str((datetime.datetime.now() - datetime.timedelta(1)).date())
 
-    trending_url = TrendingURLs([sys.argv[1]])
+    trending_url = TrendingURL([sys.argv[1]])
     with trending_url.make_runner() as runner:
         runner.run()
         for line in runner.stream_output():
@@ -34,7 +43,8 @@ def main():
         while(j<len(urlYest)):
             if (urlToday[i][0][1] == urlYest[j][0][1]):
                 pChange = ((urlToday[i][1] - urlYest[j][1]) * 100) / (urlYest[j][1])
-                percChange.append([urlToday[i][0][1], pChange])
+                if (pChange > 0):
+                    percChange.append([urlToday[i][0][1], pChange])
             j = j + 1
         i = i + 1
 
@@ -43,4 +53,4 @@ def main():
     print percChangeSort
 
 if __name__ == '__main__':
-    main()
+    getTrendingURL()
