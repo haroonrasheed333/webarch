@@ -1,5 +1,7 @@
 body {
-  font-family: 'livory', serif;
+  font-family: "trebuchet ms", serif;
+  font-size: 90%;
+  background-color: #444;
   /*font: 1em/150% Arial, Helvetica, sans-serif;*/
 }
 a {
@@ -33,10 +35,9 @@ STRUCTURE
 }
 
 #sidebar1{
-  width: 20%;
+  width: 19%;
   float: left;
-  text-align: justify;
-  
+  text-align: justify;  
 }
 
 #content {
@@ -53,6 +54,7 @@ STRUCTURE
   float: right;
   background: 'white';
   text-align: left;
+  padding-left: 10px;
 }
 
 .sidebarcontent{
@@ -64,6 +66,8 @@ STRUCTURE
   clear: both;
   text-align: left;
   height: 50px; 
+  float: right;
+  color: #999;
 }
 
 #copy{
@@ -72,14 +76,14 @@ STRUCTURE
 
 
 #appheader {
-    background-color: #666;
-    color: #FFF;
+    background-color: #444;
+    color: #CCC;
     height: 35px;
     text-align: center;
 }
   #appdiv {
   
-    background-color:#e7ebf2;
+    background-color:#EEEEEE;
     width: 100%;
     height: 400px;
     margin-left: auto; 

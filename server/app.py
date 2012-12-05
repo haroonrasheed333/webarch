@@ -14,6 +14,7 @@ from os import environ
 from most_followed_2 import mostFollowed
 from browser_action import BrowserAgentAction
 from trending_url import TrendingURL
+from most_followed import URLsMostFollowed
 import operator
 
 test ={};
@@ -186,16 +187,20 @@ def comments():
         app.logger.debug(mostfoll_bool)
         dictobj ={};
 
-        BrowserAgentAction
 
-        f = open('url_sort.out', 'r')
         urlList = []
-        browserList =[];
-        for line in f:
-            cell = csv_readline(line)
-            urlList.append((str(cell[0]),str(cell[1])))
-        dictobj['most']=urlList
+        mostfoll = URLsMostFollowed(['log.txt'])
+        with mostfoll.make_runner() as runner:
+            runner.run()
+            for line in runner.stream_output():
+                key_value = mostfoll.parse_output_line(line)
+                urlList.append(key_value)
 
+        urlListSort = sorted(urlList, key=operator.itemgetter(1), reverse=True)
+        dictobj['most']=urlListSort
+
+
+        browserList =[];
         browaction = BrowserAgentAction(['log.txt'])
         with browaction.make_runner() as runner:
             runner.run()
@@ -203,6 +208,7 @@ def comments():
                 key_value = browaction.parse_output_line(line)
                 browserList.append(key_value)
         dictobj['browser']=browserList
+
 
         urlToday = []
         urlYest = []
@@ -221,30 +227,20 @@ def comments():
                     urlToday.append(key_value)
                 elif (logdate == yesterday):
                     urlYest.append(key_value)
-
-        app.logger.debug(urlToday)
-        app.logger.debug(urlYest)
-
         i = 0
         while(i<len(urlToday)):
             j = 0
             while(j<len(urlYest)):
                 if (urlToday[i][0][1] == urlYest[j][0][1]):
                     pChange = ((urlToday[i][1] - urlYest[j][1]) * 100) / (urlYest[j][1])
-                    percChange.append([urlToday[i][0][1], pChange])
+                    if (pChange > 0):
+                        percChange.append([urlToday[i][0][1], pChange])
                 j = j + 1
             i = i + 1
-
         percChangeSort = sorted(percChange, key=operator.itemgetter(1), reverse=True)
-
         dictobj['trend']=percChangeSort
 
-
-        app.logger.debug(dictobj)
         app.logger.debug("Entered GET1")
-        # app.logger.debug(request.args)
-        # return flask.jsonify({'query':request.args.get('query')})
-        # jsonobj = flask.jsonify({'most':['www.yehp.com','www.yahoo.com']})
         jsonobj = flask.jsonify(dictobj)
         return jsonobj
 
