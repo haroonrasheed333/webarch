@@ -45,5 +45,6 @@ Notes and Assumptions:
     	We are logging the geolocation (latitude and longitude) when the user tries to save an URL. We are getting the location coordinates using HTML5 geolocation function and sending them to app.py along with other form parameters.
 
     Trending URLs
-    	To find the trending URLs we are comparing the number of clicks for each URL yesterday and today. We then calculate the percentage increase in the number of clicks from yesterday to today and determine the trending URLs.
+    	To find the trending URLs we are comparing the number of clicks for each URL yesterday and today. We then calculate the percentage increase in the number of clicks from yesterday to today and determine the trending URLs. 
+        The log file must have the URL access data for yesterday and today to calculate the trending URLs.
 

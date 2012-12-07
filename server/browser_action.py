@@ -1,8 +1,13 @@
 
 from mrjob.job import MRJob
 import json
+import csv
+import sys
 
-class MapReduce(MRJob):
+fdata = open('browaction.out', 'w')
+csv_writer1 = csv.writer(fdata)
+
+class BrowserAgentAction(MRJob):
 
     def mapper(self, line_no, line):
         jsondec = json.loads(line)
@@ -26,7 +31,8 @@ class MapReduce(MRJob):
 
     def reducer(self, browser_action, action_counts):
         total = sum(action_counts)
+        csv_writer1.writerow((browser_action, total))
         yield browser_action, total
 
 if __name__ == '__main__':
-    MapReduce.run()
+    BrowserAgentAction.run()

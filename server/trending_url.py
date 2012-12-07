@@ -1,8 +1,13 @@
+"""Find the number of clicks for an URL on a date
 
+This program takes log file with data in JSON format and outputs date and URL
+pairs along with their number of clicks for the URL on that date
+This script will be called internally from trending_url_1.py
+"""
 from mrjob.job import MRJob
 import json
 
-class TrendingURLs(MRJob):
+class TrendingURL(MRJob):
 
     def mapper(self, line_no, line):
         jsondec = json.loads(line)
@@ -18,4 +23,4 @@ class TrendingURLs(MRJob):
         yield url, total
 
 if __name__ == '__main__':
-    TrendingURLs.run()
+    TrendingURL.run()
