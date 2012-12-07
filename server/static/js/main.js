@@ -188,7 +188,14 @@ $(document).ready(function() {
 
   // Function to get details of URLS
   function getComments(){
-    var commentURL = document.URL+'urllog';  
+    var commentURL = document.URL;
+    if (commentURL[commentURL.length-1] == '/'){
+      commentURL = commentURL+'urllog';  
+    }
+    else{
+      commentURL = commentURL+'/urllog';  
+    }
+    
     console.log(document.URL);  
     console.log(commentURL)   
     $.getJSON(commentURL, function(json){
