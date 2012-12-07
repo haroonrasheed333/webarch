@@ -46,7 +46,6 @@ STRUCTURE
   text-align: left;
   border-radius: 7px;
   margin-right: 15px;
-
 }
 
 #sidebar2 {
@@ -148,11 +147,7 @@ to {background:#e7ebf2;}
   display: none;
 }
 
-#lat{
-  display: none;
-}
-
-#lon{
+#lat, #lon, #confirm{
   display: none;
 }
 

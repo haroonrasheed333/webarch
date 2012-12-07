@@ -21,7 +21,7 @@ test ={};
 app = flask.Flask(__name__)
 app.debug = True
 
-db = shelve.open("shorten.db")
+db = shelve.open("shorten1.db")
 
 def csv_readline(line):
     """Given a sting CSV line, return a list of strings."""
@@ -71,11 +71,14 @@ def create():
     # Get the list of keys stored in the shelve db
     list = db.keys()
     app.logger.debug((list))
+    app.logger.debug(url)
 
     j=0
     msg=""
+    app.logger.debug(len(list))
     while j < len(list):
         # Check if the url is already present in the db.
+        app.logger.debug(db[list[j]])
         if db[list[j]] == url:
             shorturl = list[j]
             msg = "Shortpath already exists for the URL. Using the same shortpath"
@@ -127,8 +130,12 @@ def create():
         response.set_cookie('username', username)
 
     useragent = request.headers['User-Agent']
-    lat = request.form.get("lat")
-    lon = request.form.get("lon")
+    lat = ''
+    lon = ''
+    confirm = request.form.get("confirm")
+    if confirm == 'true':
+        lat = request.form.get("lat")
+        lon = request.form.get("lon")
 
     logline = json.dumps({'datetime': str(datetime.datetime.now()), 'Action': 'saveURL', 'cookie': username, 'useragent': useragent, 'Latitude': lat, 'Longitude': lon})
     f = open("log.txt", 'a')
@@ -169,9 +176,7 @@ def redirect_short(short):
                 username = ''
 
             useragent = request.headers['User-Agent']
-            lat = request.args.get("lat", "none")
-            lon = request.args.get("lon", "none")
-            logline = json.dumps({'datetime': str(datetime.datetime.now()), 'Action': 'redirect', 'cookie': username, 'useragent': useragent, 'Latitude': lat, 'Longitude': lon, 'URL': str(destination)})
+            logline = json.dumps({'datetime': str(datetime.datetime.now()), 'Action': 'redirect', 'cookie': username, 'useragent': useragent, 'URL': str(destination)})
             f = open("log.txt", 'a')
             f.write(logline + "\n")
             f.close()

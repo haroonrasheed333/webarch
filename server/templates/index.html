@@ -5,7 +5,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <link rel="stylesheet" href="../static/css/main.css">
-    <title>Prabhavathi's Home Page</title>
+    <title>URL Shortner</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />  <!-- to enable full screen -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
@@ -34,51 +34,51 @@
           <li>Counts/Action per Browser</li></em>
         </ul>
       </div>
-    <div id="sidebar2">
-      <div class="sidebarcontent1">
-          <h3>Most followed URLs</h3>
-          <ul id="mostfoll"></ul>
-          <hr>
-          <h3>Browser-Action Count </h3>
-          <ul id="browsercount"></ul>
-          <hr>
-          <h3>Trending URLs (% inc)</h3>
-          <ul id="trendingurls"></ul>
-        
-       <br/><br/>
-    </div>
-    </div>
+      <div id="sidebar2">
+        <div class="sidebarcontent1">
+            <h3>Most followed URLs</h3>
+            <ul id="mostfoll"></ul>
+            <hr>
+            <h3>Browser-Action Count </h3>
+            <ul id="browsercount"></ul>
+            <hr>
+            <h3>Trending URLs (% inc)</h3>
+            <ul id="trendingurls"></ul>
+         <br/><br/>
+        </div>
+      </div>
  
-    <div id="content">
-      <div id="appdiv">
-        <div id="appheader">
-          <h2>Create a short URL</h1>
-        </div><!-- close header -->
-        <div class = 'myform'>
-          <form id="urlShortner" name="urlShortner" method="POST" action ="/create">
-            <label for="formurl">Enter a long URL:</label>
-            <input type="text" id="formurl" name="formurl" value=""/>
-            <span id="alert"></span>
-            <br>
-            <label class="checkbox inline" id="checkBox" for="check">
-              <input type="checkbox" id="check" value="check"> Check this box to enter a shortpath (Optional)
-            </label>
-            <div id="shortpath">
-              <label for="formshortpath">Enter the shortpath:</label>
-              <input type="text" id="formshortpath" name="formshortpath" value=""/>
-              <span id="alertShort"></span>
-              <input type="text" id="lat" name="lat" value=""/>
-              <input type="text" id="lon" name="lon" value=""/>
-            </div>
-            <br>
-            <input type="submit" id="submitButton" class="btn" value="Submit" disabled="disabled"/>
-          </form>
-          <br/><br/>
+      <div id="content">
+        <div id="appdiv">
+          <div id="appheader">
+            <h2>Create a short URL</h1>
+          </div><!-- close header -->
+          <div class="myform">
+            <form id="urlShortner" name="urlShortner" method="POST" action ="/create">
+              <label for="formurl">Enter a long URL:</label>
+              <input type="text" id="formurl" name="formurl" value=""/>
+              <span id="alert"></span>
+              <br>
+              <label class="checkbox inline" id="checkBox" for="check">
+                <input type="checkbox" id="check" value="check"> Check this box to enter a shortpath (Optional)
+              </label>
+              <div id="shortpath">
+                <label for="formshortpath">Enter the shortpath:</label>
+                <input type="text" id="formshortpath" name="formshortpath" value=""/>
+                <span id="alertShort"></span>
+                <input type="text" id="lat" name="lat" value=""/>
+                <input type="text" id="lon" name="lon" value=""/>
+                <input type="text" id="confirm" name="confirm" value=""/>
+              </div>
+              <br>
+              <input type="submit" id="submitButton" class="btn" value="Submit" disabled="disabled"/>
+            </form>
+            <br/><br/>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
   <div id="footer">
        &copy; Prabhavathi Matta , Haroon Rasheed
        <br> University of California, Berkeley

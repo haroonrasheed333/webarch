@@ -79,27 +79,27 @@ $(document).ready(function() {
     $("#submitButton").attr('disabled', 'disabled');
     $("#alert").html("");
 
-    if (navigator.geolocation) {
-      var location_timeout = setTimeout("geolocFail()", 10000);
-
-      navigator.geolocation.getCurrentPosition(function(position) {
-        clearTimeout(location_timeout);
-        var lat = position.coords.latitude;
-        var lng = position.coords.longitude;
-        $("#lat").html(lat);
-        $("#lon").html(lng);
-        $("#lat").val(lat);
-        $("#lon").val(lng);
-      }, function(error) {
-        clearTimeout(location_timeout);
-        alert("error");
-      });
-      alert("Would you like to share your Geolocation?");
-    }
-    function geolocFail(){
-      console.log("fail");
-    }
-    return;
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition( 
+          function (position) {  
+            $("#lat").html(position.coords.latitude);
+            $("#lon").html(position.coords.longitude);
+            $("#lat").val(position.coords.latitude);
+            $("#lon").val(position.coords.longitude);
+          }, 
+          function (error) {
+            console.log(error);
+            //alert(error);
+          }
+        );
+      }
+      var conf = confirm("Would you like to share your Geolocation?");
+      if (conf == true)
+      {
+        $("#confirm").html("true");
+        $("#confirm").val("true");
+      }
+      return;
   });
 
   $("#check").live('click', function() {
@@ -120,6 +120,9 @@ $(document).ready(function() {
 
   $('.sidebarcontent1').bind('touchstart', onTouchStart1);
   $('.sidebarcontent1').bind('touchend', onTouchEnd1);
+
+  $('.myform').bind('touchstart', onTouchStart2);
+  $('.myform').bind('touchend', onTouchEnd2);
 
   var offset;
   $('.sidebarcontent').bind('touchmove', onTouchMove);
@@ -146,6 +149,18 @@ $(document).ready(function() {
     event.stopPropagation();
     event.preventDefault();
     $('#sidebar2').css('background-color','inherit');
+  }
+
+  function onTouchStart2(event){
+    event.stopPropagation();
+    event.preventDefault();
+    $('.myform').css('background-color','yellow');
+  }
+  
+  function onTouchEnd2(event) {
+    event.stopPropagation();
+    event.preventDefault();
+    $('.myform').css('background-color','inherit');
   }
 
   $('#check').on('click',function(e){
